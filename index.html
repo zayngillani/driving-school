@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<%= asset_path('styles.css') %>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <title>Driving School</title>
+    <style>
+    #about-container, #service-container, #contact-container {
+      max-width: 100%;
+      margin: 0 auto;
+  }
+  
+    body {
+  max-width: 100vw; /* Ensures it doesn't exceed viewport width */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.image-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5vw;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.text-container {
+    max-width: 90%;
+    width: 100%;
+}
+
+.centered-text {
+    font-size: max(1vw, 12px);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.3;
+    word-wrap: break-word;
+}
+
+.description-text {
+    font-size: max(0.8vw, 10px);
+    line-height: 1.6;
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+.btn-custom2 {
+    background-color: #7D47FF;
+    color: white;
+    font-size: max(0.8vw, 16px);
+    font-weight: bold;
+    border-radius: 7px;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .highlighted-text {
+        font-size: max(2vw, 18px);
+    }
+    .description-text {
+        font-size: max(0.8vw, 12px);
+    }
+    .btn-custom2 {
+        font-size: max(0.8vw, 12px);
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-overlay {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .highlighted-text {
+        font-size: max(1.8vw, 14px);
+    }
+    .description-text {
+        font-size: max(0.7vw, 10px);
+    }
+    .btn-custom2 {
+        font-size: max(0.7vw, 10px);
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-container {
+        max-width: 95%;
+        padding: 10px;
+    }
+    .highlighted-text {
+        font-size: max(1.5vw, 12px);
+    }
+    .description-text {
+        font-size: max(0.6vw, 9px);
+    }
+    .btn-custom2 {
+        font-size: max(0.6vw, 9px);
+        padding: 5px 10px;
+    }
+}
+
+body {
+            font-family: 'Inter', sans-serif;
+        }
+        .container-fluid {
+            height: 23vh; /* Set height to 100% of viewport */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space boxes evenly */
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+        .box {
+            display: flex; /* Enable flexbox layout */
+            align-items: center; /* Vertically center the items */
+            gap: 20px; /* Adds space between the icon and text */
+            background-color: #F2FFFC;
+            padding: 20px;
+            height: 120%;
+            margin: 10px;
+            flex: 1; /* Allow boxes to take equal width */
+        }
+
+        .box-icon {
+            width: 40px; /* Adjust the icon size */
+            height: auto; /* Maintain aspect ratio */
+            order: 0; /* Move icon to the beginning of the flex order */
+        }
+
+        .box-text {
+            order: 1; /* Move text content after the icon */
+        }
+
+        .box-text h3 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .box-text p {
+            margin: 0;
+            color: #555; /* Optional: You can style the text color */
+            font-size: 15px;
+        }
+
+        .about-section {
+            display: flex;
+            align-items: flex-start; /* Align content to the top */
+            padding: 0px 20px;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+        .about-section img {
+            width: 45%;
+            height: auto;
+            margin: 64px;
+        }
+
+        .about-content {
+            padding: 11px 0px 5px 1px;
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+         .about-content .feature-columns {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+        .about-content .feature-columns .feature-list {
+            width: 45%;
+        }
+
+        .about-content .feature-columns ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-content .feature-columns ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+
+        .about-content .feature-columns ul li span {
+            font-size: 1.2em;
+        }
+
+        .success-stories {
+            background-color: #6c63ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .success-stories {
+            display: flex;
+            align-items: center;
+            background-color: #6c63ff;
+            color: white;
+            padding: 15px 20px; /* Adjusted padding for better proportions */
+            border-radius: 0px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1em; /* Adjusted font size */
+            gap: 15px;
+        }
+
+        .success-stories .icon-container {
+            background-color: #A8E6CF; /* Light background for the icon */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        .success-stories img {
+            width: 40px; /* Adjust icon size */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .success-stories-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-list ul {
+            list-style-type: none; /* Remove the default bullets */
+            padding: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-icon {
+            width: 22px; /* Adjust this to the desired size */
+            height: 22px; /* Adjust this to the desired size */
+            background-image: url('images/task_alt.png'); /* Relative path to logo */
+            background-size: contain; /* Make sure the logo fits */
+            background-repeat: no-repeat;
+            margin-right: 8px; /* Space between the logo and the text */
+        }
+
+        .feature-list span {
+            font-size: 16px; /* Adjust the font size */
+        }
+
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            .container-fluid {
+                flex-direction: column; /* Stack the boxes vertically on mobile */
+                height: auto; /* Adjust height for mobile */
+            }
+
+            .about-section {
+                flex-direction: column; /* Stack image and content vertically */
+            }
+
+            .about-section img {
+                width: 80%; /* Adjust image width on mobile */
+                margin: 20px 0; /* Adjust margin for mobile */
+            }
+
+            .box {
+                flex: 1 1 100%; /* Stack boxes vertically */
+                margin: 10px 0; /* Adjust margin between stacked boxes */
+            }
+
+            .about-content .feature-columns .feature-list {
+                width: 100%; /* Make feature lists stack on mobile */
+                margin-bottom: -5px;
+            }
+        }
+
+        /* Additional responsiveness for very small screens */
+        @media (max-width: 480px) {
+            .box-text h3 {
+                font-size: 1.2em; /* Adjust font size for smaller screens */
+            }
+
+            .box-text p {
+                font-size: 8px; /* Adjust font size for smaller screens */
+            }
+
+            .success-stories {
+                font-size: 0.9em; /* Adjust font size for smaller screens */
+            }
+        }
+            .centered-text {
+            text-align: center;
+        }
+
+/* General Styles */
+.services-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.services-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.services-section p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.service-card {
+    border: none;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    margin: 20px 0 10px;
+}
+
+.service-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-box {
+    position: relative;
+    margin-top: -37%;
+    background-color: #F2FFFC;
+    padding: 15px;
+    width: 90%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-before-text {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 50px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .logo-box {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 30px 10px;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+
+    .service-card h3 {
+        font-size: 1.3em;
+    }
+
+    .service-card p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 500px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .col-md-4 {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .logo-box {
+        width: 90%;
+        max-width: 100%;
+    }
+}
+
+.instructor-section {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 50px 0; /* Add padding for spacing */
+
+        overflow: hidden; /* Prevent image from overflowing outside the banner */
+    }
+    .instructor-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 40px;
+        text-align: left; /* Align text to the left */
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: relative; /* Position the card as the parent for absolute positioning */
+        width: 47%;
+        margin-left: 10%;
+        max-width: 540px;
+        margin-top: 6%;
+    }
+
+    .instructor-info {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .rounded-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute; 
+        top: -55px; /* Adjust as needed */ 
+        left: 25px; /* Adjust as needed */ 
+    }
+
+    .card-content {
+        padding-left: 12px; /* Adjust based on image size */
+        padding-top: 30px; /* Adjust based on image size */
+    }
+
+
+    .heading-margin {
+        margin-top: 8px;
+        margin-bottom: 20px;
+    }
+
+    .color {
+        margin: 0 15px; /* Add left and right margin for spacing */
+    }
+
+    .carousel-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top:3%;
+    }
+    
+    .carousel-buttons {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+        display: flex;
+        justify-content: space-between;
+        width: 100px; /* Adjust the width if needed to space the buttons */
+    }
+    
+    .carousel-buttons .prev,
+    .carousel-buttons .next {
+        background: none; /* No background */
+        border: none; /* No border */
+        color: white; /* White color for the arrows */
+        font-size: 40px; /* Larger font size for the brackets */
+        cursor: pointer; /* Pointer cursor on hover */
+        font-weight: bold; /* Bold style for the brackets */
+    }
+    
+    .carousel-buttons .prev:before {
+        content: '<'; /* Left bracket */
+    }
+    
+    .carousel-buttons .next:before {
+        content: '>'; /* Right bracket */
+    }
+    
+    .verified-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #4285f4; /* Blue color */
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.verified-badge::before {
+  content: "\2713"; /* Checkmark character */
+  font-size: 19px;
+  margin-right: 5px;
+}
+    
+.card-text{
+font-size: medium;
+}
+
+.instructor-holder{
+        top: -90px; left: 1px; width: 100px; height: 100px;
+    }
+
+@media (max-width: 500px) {
+    .heading-margin {
+        font-size: 30px !important; /* Reduce heading size */
+        margin-top: 20px !important;
+    }
+
+    .instructor-section {
+        padding: 20px 0; /* Adjust padding */
+    }
+
+    .instructor-card {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        margin-top: 50px; /* Push card lower to avoid overlap */
+    }
+
+    .rounded-circle {
+        width: 70px;
+        height: 70px;
+        top: -30px; /* Adjust image positioning */
+        left: 10px;
+    }
+
+    .card-content {
+        padding-left: 8px;
+        padding-top: 30px;
+    }
+
+    .card-text {
+        font-size: 10px;
+    }
+
+    h4.card-instructor {
+        font-size: 18px;
+    }
+
+    .verified-badge {
+        font-size: 14px;
+        padding: 3px 8px;
+    }
+
+    .verified-badge::before {
+        font-size: 16px;
+    }
+    .instructor-holder{
+        top: -63px; left: 1px; width: 100px; height: 100px;
+    }
+}
+
+@import 'bootstrap';
+
+
+ /* In your application.css or a specific CSS file */
+/* Your existing flash styling */
+/* Your existing flash styling */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    animation: fadeOut 3s ease-out 3s forwards; /* Fade-out after 3 seconds */
+  }
+  
+  /* Success (green) */
+  .flash.notice {
+    background-color: #d4edda;  /* Green for success */
+    color: #155724;
+  }
+  
+  /* Error (red) */
+  .flash.alert {
+    background-color: #f8d7da;  /* Red for errors */
+    color: #721c24;
+  }
+  
+  /* Keyframes for the fade-out effect */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1; /* Fully visible at the start */
+    }
+    100% {
+      opacity: 0; /* Fully invisible at the end */
+      visibility: hidden; /* Hides the element completely */
+      display: none; /* Ensures the element is not taking up space */
+    }
+  }
+  
+  .price-text{
+    font-size: larger;
+  }
+
+  .card-instructor{
+    font-size: xx-large;
+  }
+  .card-body{
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: 46%;
+    top: 58%;
+    background-color: rgba(251, 247, 247, 1);
+    padding: 1rem;
+  }
+
+  .pic-media{
+    width: 100%; height: 100%;
+  }
+
+  @media (max-width: 480px) {
+    .card-body{
+        top: 53%;
+        width: 69%;
+    }
+
+    .card-title {
+        margin-bottom: 0.25rem; /* Reduce bottom margin */
+        font-size: 0.9rem; /* Adjust font size if necessary */
+    }
+
+    .price-text {
+        margin-bottom: 0; /* Reduce bottom margin */
+        font-size: 1rem; /* Adjust font size if necessary */
+        margin-top: -8px;
+    }
+
+    .card-text {
+        font-size: 0.75rem; /* Reduce text size */
+        line-height: 1.2; /* Reduce line height for tighter spacing */
+    }
+    .pic-media{
+      width: 100%;
+      height: 250px;
+    }
+}
+
+
+  .book-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: x-large;
+    padding: 0;
+    display: inline;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0d6efd;
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .nav-link {
+    color: #fff;
+    margin: 0 10px;
+}
+
+.footer .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.footer .divider {
+    border-top: 1px solid #444;
+    margin: 20px 0;
+}
+
+.container-fluid {
+    height: 23vh; /* Set height to 100% of viewport */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space boxes evenly */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.box {
+    display: flex; /* Enable flexbox layout */
+    align-items: center; /* Vertically center the items */
+    gap: 20px; /* Adds space between the icon and text */
+    background-color: #F2FFFC;
+    padding: 20px;
+    height: 120%;
+    margin: 10px;
+    flex: 1; /* Allow boxes to take equal width */
+}
+
+.box-icon {
+    width: 40px; /* Adjust the icon size */
+    height: auto; /* Maintain aspect ratio */
+    order: 0; /* Move icon to the beginning of the flex order */
+}
+
+.box-text {
+    order: 1; /* Move text content after the icon */
+}
+
+.box-text h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.box-text p {
+    margin: 0;
+    color: #555; /* Optional: You can style the text color */
+    font-size: 10px;
+}
+
+.about-section {
+    display: flex;
+    align-items: flex-start; /* Align content to the top */
+    padding: 40px 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.about-section img {
+    width: 40%;
+    height: auto;
+    margin: 64px;
+}
+
+.about-content {
+    padding: 11px;
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+ .about-content .feature-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.about-content .feature-columns .feature-list {
+    width: 45%;
+}
+
+.about-content .feature-columns ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-content .feature-columns ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.about-content .feature-columns ul li span {
+    font-size: 0.9em;
+}
+
+.success-stories {
+    background-color: #6c63ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.success-stories {
+    display: flex;
+    align-items: center;
+    background-color: #6c63ff;
+    color: white;
+    padding: 15px 20px; /* Adjusted padding for better proportions */
+    border-radius: 0px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1em; /* Adjusted font size */
+    gap: 15px;
+}
+
+.success-stories .icon-container {
+    background-color: #A8E6CF; /* Light background for the icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.success-stories img {
+    width: 20px; /* Adjust icon size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.success-stories-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-list ul {
+    list-style-type: none; /* Remove the default bullets */
+    padding: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+}
+
+.feature-icon {
+    width: 16px; /* Adjust this to the desired size */
+    height: 16px; /* Adjust this to the desired size */
+    background-size: contain; /* Make sure the logo fits */
+    background-repeat: no-repeat;
+    margin-right: 8px; /* Space between the logo and the text */
+}
+
+.feature-list span {
+    font-size: 16px; /* Adjust the font size */
+}
+
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .container-fluid {
+        flex-direction: column; /* Stack the boxes vertically on mobile */
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .about-section {
+        flex-direction: column; /* Stack image and content vertically */
+    }
+
+    .about-section img {
+        width: 80%; /* Adjust image width on mobile */
+        margin: 20px 0; /* Adjust margin for mobile */
+    }
+
+    .box {
+        flex: 1 1 100%; /* Stack boxes vertically */
+        margin: 10px 0; /* Adjust margin between stacked boxes */
+    }
+
+    .about-content .feature-columns .feature-list {
+        width: 100%; /* Make feature lists stack on mobile */
+        margin-bottom: 20px;
+    }
+}
+
+/* Additional responsiveness for very small screens */
+@media (max-width: 480px) {
+    .box-text h3 {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+
+    .box-text p {
+        font-size: 8px; /* Adjust font size for smaller screens */
+    }
+
+    .success-stories {
+        font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Reset body and html margin and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Base styles for the .banner */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0px 75px 72px; /* Adjust bottom padding */
+    flex-wrap: wrap; /* Ensures items wrap on smaller screens */
+    background-image: url('<%= asset_path("home_background.png") %>'); /* Correct path using Rails helper */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+    overflow: hidden; /* Prevent image from overflowing outside the banner */
+}
+
+.banner img {
+    max-width: 50%; /* Image width controlled by max-width */
+    height: auto;
+    margin-left: 15px;
+    transform: scale(1.1); /* Slight zoom on the image */
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+    object-fit: cover; /* Make sure the image maintains aspect ratio and covers the space */
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .banner {
+        flex-direction: column; /* Stack text and image on top of each other */
+        text-align: center; /* Center-align text */
+        padding: 15px; /* Reduce padding for mobile */
+    }
+
+    .text-content {
+        max-width: 100%; /* Text takes full width on mobile */
+        margin-bottom: 10px;
+    }
+
+    .banner img {
+        max-width: 80%; /* Image takes more width on mobile */
+        margin: 0 auto;
+        transform: scale(1.0); /* Keep image scaled normally on mobile */
+    }
+}
+.text-content p {
+    font-size: larger;
+}
+
+.text-content h1 {
+    font-size: 3.5em;
+}
+/* For very small screens like portrait mobile phones */
+@media (max-width: 480px) {
+    .text-content h1 {
+        font-size: 1.8em; /* Make the title smaller */
+        margin-top: 21%;
+    }
+
+    .text-content p {
+        font-size: 0.8em; /* Adjust paragraph size for readability */
+        margin-top: 6%;
+        margin-bottom: 20%;
+    }
+
+    .heading h3{
+        font-size: medium;
+    }
+
+    .btn-custom {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .banner img {
+        max-width: 90%; /* Image takes almost full width on small screens */
+        transform: scale(1.05); /* Slight zoom on very small screens */
+    }
+}
+
+.heading {
+    background-color: #FF733C;
+    padding: 10px 0;
+}
+
+.header {
+    background-color: #FFFFFF;
+    padding: 10px 0;
+}
+
+.header a {
+    color: black;
+    margin: 0 60px;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+@media (max-width: 480px) {
+    .header {
+        background-color: #FFFFFF;
+        padding: 10px 0;
+    }
+    .header a {
+        color: black;
+        margin: 0 12px;
+        text-decoration: none;
+        font-size: x-small;
+    }
+    .company-logo-media{
+        width: 19%;
+    }
+    .book-link {
+        font-size: x-small;
+      }
+}
+
+.image-section {
+    position: relative;
+    width: 100%;
+    height: auto; /* Allow height to adjust based on image size */
+}
+
+.image-section img {
+    width: 100%; /* Ensure the image takes up the full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.img-fluid {
+    max-width: 80%;
+    height: auto;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3); /* Optional: Darken the image background for contrast */
+    color: white; /* Text color */
+    padding: 20px;
+    text-align: center;
+}
+
+.centered-text {
+    font-size: 15px; /* Adjust text size */
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif; /* Apply the Inter font */
+}
+
+.btn-custom {
+    background-color: white;
+    color: black;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 7px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none;
+}
+
+.btn-custom2 {
+    background-color: #7D47FF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 7px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none;
+}
+
+.btn-custom:hover {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-custom2:hover {
+    background-color: white;
+    color: #7D47FF;
+    text-decoration: none;
+}
+
+.learn-more {
+    color: black; /* Set text color to black */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Optional: Make text bold */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.learn-more:hover {
+    color: black; /* Optional: Change text color on hover */
+}
+
+.highlighted-text {
+    font-weight: bold; /* Make the text bold */
+    font-size: 60px; /* Increase the font size */
+}
+
+.text-color {
+    color: #99E1E0; /* Apply color */
+}
+
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container text-center">
+        <nav>
+            <a href="#" id="about-link">About</a>
+            <a href="#" id="service-link">Services</a>
+            <a href="#" class="logo">
+                <img src="images/company_logo.png" alt="Company Logo" class="company-logo-media">
+            </a>
+            <a href="#" id="contact-link">Contact Us</a>
+            <button class="book-link" onclick="window.location.href='book_session.html'">Book Session</button>
+        </nav>
+    </div>
+</header>
+<!-- Banner Section -->
+<div class="banner" style="background-image: url('images/home_background.png');">
+    <div class="text-content">
+        <h1>Building <strong>Confident Drivers</strong>,<br> One Lesson at a Time.</h1>
+        <p>Whether you’re a beginner or seeking to refine your skills, our<br>experienced instructors provide personalized lessons designed to<br>build confidence, ensure safety, and prepare you for the road<br>ahead. Join us today and take the first step toward independence!</p>
+        <br><br><a href="/book_session" class="btn-custom">Book Session Now</a>
+    </div>
+</div>
+
+<div class="image-section">
+    <div class="image-overlay">
+        <div class="text-container">
+            <p class="centered-text">
+                <span class="highlighted-text">Your Driving Lesson Is <br> Just a Few 
+                    <span class="text-color">Clicks Away</span>
+                </span>
+            </p>
+            <p class="description-text">
+                The main benefit of booking with Book Instructor is you only have to enquire once and we do the hard work.<br>
+                Don’t spend days on end texting and calling local instructors to try and get booked in—our online portal has access to dozens of local instructors. <br><br>
+                If we cannot allocate immediately, we will contact as many ADIs as necessary in your area until we have successfully allocated your booking. <br><br>
+                If we cannot get you a driving instructor, we have a <strong>100% refund guarantee</strong>.
+            </p>
+            <a href="/book_session" class="btn-custom2">Book Session Now</a>
+        </div>
+    </div>
+    <img src="images/testimonial.jpeg" alt="Driving Lesson" class="responsive-img">
+</div>
+<div id="about-container">
+    <body style="background-color: white;">
+        <div class="container-fluid">
+            <div class="box">
+                <img src="images/savings.png" alt="Saving Icon" class="box-icon">
+                <div class="box-text">
+                    <h3>Small Deposit</h3>
+                    <p>Book your driving instructor online with a small deposit!</p>
+                </div>
+            </div>
+    
+            <div class="box">
+                <img src="images/minor_crash.png" alt="Driving Icon" class="box-icon">
+                <div class="box-text">
+                    <h3>Get Driving</h3>
+                    <p>Get behind the wheel and start your driving lessons in just a few weeks!</p>
+                </div>
+            </div>
+            
+            <div class="box">
+                <img src="images/assignment.png" alt="Instructor Icon" class="box-icon">
+                <div class="box-text">
+                    <h3>Instructors</h3>
+                    <p>Fully DVSA approved and DBS checked driving instructors.</p>
+                </div>
+            </div>
+        </div><br><br>
+    </body>
+</div>
+        <!-- Design from the attached image -->
+        <div class="about-section">
+            <img src="images/about_image.png" alt="Driving Image">
+            <div class="about-content"><br><br>
+                <p style="font-weight: bold; font-size: x-large;">ABOUT US</p>
+                <h2>We Are On A Mission To <br> Help You Get Your<br> Driving License.</h2>
+                <div class="success-stories">
+                    <div class="icon-container">
+                        <img src="images/like.png" alt="Like Icon">
+                    </div>
+                    <div class="success-stories-text">
+                        <span>100,000+</span>
+                        <span>Success Stories</span>
+                    </div>
+                </div>
+                <div class="feature-columns">
+        <div class="feature-list">
+            <ul>
+                <li><span class="feature-icon"></span><span>Dual Controlled Vehicles</span></li>
+                <li><span class="feature-icon"></span><span>Learn All Manoeuvres</span></li>
+                <li><span class="feature-icon"></span><span>Manual & Automatic Gears</span></li>
+                <li><span class="feature-icon"></span><span>Local Driving Instructors</span></li>
+            </ul>
+        </div>
+        <div class="feature-list">
+            <ul>
+                <li><span class="feature-icon"></span><span>Practical Driving Lessons</span></li>
+                <li><span class="feature-icon"></span><span>Progress Reports</span></li>
+                <li><span class="feature-icon"></span><span>Mock Tests</span></li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    
+    </div>
+    </div>
+    <div class="centered-text">
+        <h1 style="font-weight: bold; font-size: xxx-large;">Professional Driving Lessons</h1>
+        <p style="font-size: larger;">All of our instructors are qualified, professional and experienced.</p>
+    </div>
+    
+    <div class="container services-section">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <div class="image-wrapper">
+                        <img src="images/service_1.png" alt="Automatic Lessons">
+                    </div>
+                    <div class="logo-box">
+                        <img src="images/auto_transmission.png" alt="Small Logo" class="logo-before-text">
+                        <h3>Automatic Lessons</h3>
+                        <p>We can allocate you a driving <br> instructor with an automatic<br> vehicle to teach you in.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4">
+                <div class="service-card">
+                    <div class="image-wrapper">
+                        <img src="images/service_2.png" alt="Driving Test">
+                    </div>
+                    <div class="logo-box">
+                        <img src="images/traffic_jam.png" alt="Small Logo" class="logo-before-text">
+                        <h3>Driving Test</h3>
+                        <p>We can help you book a quicker<br> driving test and sit it sooner<br> than the normal waiting list.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4 mb-4">
+            <div class="service-card">
+                <div class="image-wrapper">
+                    <img src="images/service_3.png" alt="Manual Lessons">
+                </div>
+                <div class="logo-box">
+                    <img src="images/traffic.png" alt="Small Logo" class="logo-before-text">
+                    <h3>Manual Driving Lessons</h3>
+                    <p>We can allocate you a driving<br> instructor with a Manual/Automatic <br>vehicle to teach you in.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    </body>
+  </div>
+  <div id="service-container">
+    <div style="background-color: #7C46FD; margin-top: 12%;"> 
+      
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12"> <br><br>
+                <h1 class="text-center mb-4 mt-4 text-white"style="font-size: 50px; font-weight: bold;">Comprehensive Driving Lessons for<br> Every Need</h1>
+                <h5 class="text-center text-white mb-5"> We offer a wide range of lessons designed to meet your unique requirements: </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4"> 
+                    <img src="images/5.1.png" alt="Driving Icon" class="pic-media">
+                    <div class="card-body"> 
+                        <h6 class="card-title">2hrs Manual Lesson</h6>
+                        <h5 class="price-text">- £90</h5>
+                        <p class="card-text" style="font-size: small;">Ideal for beginners taking their first steps into Manual/Automatic driving or for those who need a quick refresher.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4"> 
+                    <img src="images/5.2.png" alt="Driving Icon" class="pic-media">
+                    <div class="card-body"> 
+                        <h6 class="card-title">10Hrs Manual Lessons</h6>
+                        <h5 class="price-text">- £450</h5>
+                        <p class="card-text" style="font-size: small;">This package is perfect for new learners or those building their skills over time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4"> 
+                    <img src="images/5.3.png" alt="Driving Icon" class="pic-media">
+                    <div class="card-body"> 
+                        <h6 class="card-title">Post-Test Manual Lesson (2Hrs)</h6>
+                        <h5 class="price-text">- £100</h5>
+                        <p class="card-text" style="font-size: small;">These two hours will refine your driving and set you up for real-world success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4"> 
+                    <img src="images/5.4.png" alt="Driving Icon" class="pic-media">
+                    <div class="card-body"> 
+                        <h6 class="card-title">2Hrs Motorway Lesson</h6>
+                        <h5 class="price-text">- £150</h5>
+                        <p class="card-text" style="font-size: small;">Learn lane discipline, safe overtaking, and motorway essentials to drive with ease.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card mb-4"> 
+                    <img src="images/5.5.png" alt="Driving Icon" class="pic-media">
+                    <div class="card-body"> 
+                        <h6 class="card-title">6Hrs Pass Plus</h6>
+                        <h5 class="price-text">- £420</h5>
+                        <p class="card-text" style="font-size: small;">Master advanced driving in motorways, night conditions, and bad weather while potentially lowering insurance costs.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4">
+                <div class="card mb-4"> 
+                    <img src="images/5.6.png" alt="Driving Icon" class="pic-media">
+                    <div class="card-body"> 
+                        <h6 class="card-title">5-Day Intensive Course</h6>
+                        <h5 class="price-text">- £1500</h5>
+                        <p class="card-text" style="font-size: small;">Designed for busy schedules, this 5-day course combines lessons and test prep to help you pass with confidence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+        <a href="/book_session" class="btn-custom">Book Session Now</a>
+        </div><br><br><br>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+    </div>
+    <div class="instructor-section" style="background-image: url('images/learn.png'); margin-bottom: -5%;">
+        <h1 class="text-center mb-4 text-white heading-margin font-weight-bold" style="font-size: 65px;">Learn from the best</h1>
+        <h4 class="text-center text-white">Best Instructors in town.</h4>
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center min-vh-100">
+                <div class="instructor-card w-36 h-50">
+                    <div class="instructor-info position-relative">
+                        <img src="images/714.jpg" alt="Instructor 1" class="rounded-circle position-absolute instructor-holder">
+                        <div class="card-content mt-5 pt-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="card-instructor mb-0">Sajid Bashir</h4>
+                                <div class="verified-badge bg-primary text-white rounded-pill px-3 py-1 d-flex align-items-center">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    <span class="ml-1">Verified</span>
+                                </div>
+                            </div>
+                            <p class="card-text mt-2">Instructor</p>
+                            <p class="card-text">
+                                I am helping people to learn driving for many years. 
+                                Learning<br> to drive can be a daunting task.
+                                Whether you’re just starting to<br> think about it, or it’s been on your mind for years,
+                                we can help<br> make your driving dreams a reality. At our driving school, as<br> experienced instructors, we will do our best to put you immediately at ease,
+                                and work with you to help you pass your<br> test with flying colours. 
+                                We offer driving lessons on our flexible <br>timetables, and we're committed to helping you. 
+                                We're located <br>in Bristol, and you can get in touch with us on <strong>+447515412427</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="contact-container">
+        <div class="contact-section" style="background-image: url('images/7.png');">
+            <div class="contact-overlay"></div>
+            <div class="contact-form-container">
+                <div class="contact-form">
+                    <h1>Get in touch with us.</h1>
+                    <h1>We're here to assist you.</h1><br><br>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="a99a8b1b-16a1-4f5e-b456-e351edafb32a">
+                    
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="phone" placeholder="Phone Number (optional)">
+                            </div>
+                        </div>
+                        <textarea class="form-control mt-3" name="message" rows="4" placeholder="Message" required></textarea>
+                    
+                        <!-- Optional Spam Protection (reCAPTCHA) -->
+                        <input type="hidden" name="subject" value="New Contact Form Submission">
+                        <input type="checkbox" name="botcheck" style="display: none;">
+                    
+                        <button type="submit" class="btn btn-send mt-3">Send Message</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <nav class="nav justify-content-center">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="#" id="about-link" class="nav-link">About</a>
+                    <a href="#" id="service-link" class="nav-link">Services</a>
+                    <a href="#" id="contact-link" class="nav-link">Contact Us</a>
+                    <button style="font-size: medium; color: white;" class="book-link" onclick="window.location.href='/book_session'">Book Session</button>
+                </nav>
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <div class="divider"></div>
+                <p>Non Copyrighted © 2024 Upload by Bristol's Independent driving school</p>
+            </div>
+        </footer>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function(event) {
+      let targetSection = this.id?.replace("-link", "-container");
+      let targetElement = document.getElementById(targetSection);
+
+      // Only prevent default behavior for section links
+      if (targetElement) {
+        event.preventDefault();
+        window.scrollTo({
+          top: targetElement.offsetTop - 50,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+});
+
+document.querySelector("form").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Prevent form from reloading the page
+
+    let formData = new FormData(this);
+    let response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+    });
+
+    let result = await response.json();
+    
+    if (result.success) {
+        alert("Message sent successfully!");
+        this.reset(); // Clear form after submission
+    } else {
+        alert("Error sending message. Please try again.");
+    }
+});
+
+</script>
